@@ -16,6 +16,20 @@ require "../function/fungsi.php";
         body {
             margin-top: 20px;
         }
+
+        .banner{
+            background-image: url("../image/regis.jpg");
+            background-position: center;
+            background-size:cover;
+            opacity: 0.5;
+        }
+        
+        .blue{
+            opacity: 0.5;
+            background-color: blue;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 
@@ -23,8 +37,8 @@ require "../function/fungsi.php";
     <div class="container">
 
         <div class="row">
-            <div class="col-5 bg-primary">
-
+            <div class="col-5 banner">
+                <div class="blue"></div>
             </div>
             <div class="col-7" style="height: 570px;">
                 <div class="container">
