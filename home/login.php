@@ -16,43 +16,48 @@ require "../function/fungsi.php";
         body {
             margin-top: 20px;
         }
-
     </style>
 </head>
 
 <body>
-    <div class="w-70 d-flex bg">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <form action="" method="POST">
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Username:</label>
-                        <input type="text" id="username" name="username" class="form-control" required autocomplete="off">
+
+        <div class="row">
+            <div class="col-5 bg-primary">
+
+            </div>
+            <div class="col-7" style="height: 570px;">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7">
+                            <form action="" method="POST" class="w-100">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username:</label>
+                                    <input type="text" id="username" name="username" class="form-control" required autocomplete="off">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password:</label>
+                                    <input type="password" id="password" name="password" class="form-control" required autocomplete="oof">
+                                </div>
+
+                                <input type="submit" name="submit" value="Login" class="btn btn-primary">
+                            </form>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password:</label>
-                        <input type="password" id="password" name="password" class="form-control" required autocomplete="oof">
-                    </div>
-
-                    <input type="submit" name="submit" value="Login" class="btn btn-primary">
-                </form>
+                </div>
             </div>
         </div>
 
-    </div>
-    </div>
-
-
-    <div class="panel panel-default bg-primary fixed-bottom d-flex align-items-center justify-content-center">
-        <div class="panel-body m-2">
-            <img src="../image/favicion-removebg-preview.png" width="40" alt="">
+        <div class="panel panel-default bg-primary fixed-bottom d-flex align-items-center justify-content-center">
+            <div class="panel-body m-2">
+                <img src="../image/favicion-removebg-preview.png" width="40" alt="">
+            </div>
+            <div class="panel-footer">
+                Copyright © 2023. smk mutu cikampek
+            </div>
         </div>
-        <div class="panel-footer">
-            Copyright © 2023. smk mutu cikampek
-        </div>
-    </div>
 
 </body>
 
