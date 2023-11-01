@@ -4,17 +4,13 @@ require "../function/koneksi.php";
 require "../function/fungsi.php";
 
 if (isset($_POST['submit'])) {
-    //untuk mengenerate user id :)
-    $uniqueString = uniqid();
-    $userid = crc32($uniqueString);
-
-    //menampung semua input user ke dalam varible
+    $user_id = rand(0,1000) * rand(0,1000);
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
 
-    tambah_data_register_user("INSERT INTO `users`(`user_id`, `username`, `email`, `password`, `role`, `isAktif`) VALUES ('$userid','$username','$email','$password','member','1')");
+    tambah_data_register_user("INSERT INTO `users`(`user_id`, `username`, `email`, `password`, `role`, `isAktif`) VALUES ('$user_id','$username','$email','$password','member','1')");
     session_start();
     $_SESSION['username'] = $_POST['username'];
     $_SESSION['role'] = $_POST['role'];

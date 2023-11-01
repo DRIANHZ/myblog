@@ -34,7 +34,7 @@ function ambil_satu_data_post($query){
 function posting_content($data){
     global $koneksi;
     mysqli_query($koneksi,$data);
-    // header("location:./menu.php");
+    header("location:./menu.php");
 
 }
 
@@ -92,6 +92,21 @@ $created_at = date("Y-m-d", time());
     mysqli_query($koneksi,"INSERT INTO `comments`(`comment_id`, `post_id`, `user_id`, `content`, `created_at`, `update_at`) VALUES ('$comment_id','$post_id','$user_id','$content','$created_at','$created_at')");
 
     
+}
+
+function generateRandomNumbers(int $numberOfTerms): array
+{
+    $randomNumbers = [];
+
+    // Seed the random number generator with the current time.
+    mt_srand(microtime(true));
+
+    // Generate 36 random numbers.
+    for ($i = 0; $i < $numberOfTerms; $i++) {
+        $randomNumbers[] = sprintf("%09d", mt_rand());
+    }
+
+    return $randomNumbers;
 }
 ?>
 

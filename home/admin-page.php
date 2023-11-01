@@ -17,6 +17,7 @@ if (isset($_POST['submit'])) {
 }
 
 $categories = ambil_semua_data_post("SELECT * FROM `categories`");
+$users = ambil_semua_data_post("SELECT * FROM `users`");
 ?>
 
 <!DOCTYPE html>
@@ -61,23 +62,55 @@ $categories = ambil_semua_data_post("SELECT * FROM `categories`");
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($categories as $categori): ?>
-                        <tr>
-                            <td><?= $categori['category_id'] ?></td>
-                            <td><?= $categori['name'] ?></td>
-                            
-                        </tr>
+                        <?php foreach ($categories as $categori) : ?>
+                            <tr>
+                                <td><?= $categori['category_id'] ?></td>
+                                <td><?= $categori['name'] ?></td>
+
+                            </tr>
                         <?php endforeach; ?>
                     </tbody>
-                    </table>
+                </table>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 border">
 
-                <div class="overflow-scroll">
-                    
+                <div class="overflow-y-scroll">
+                    <table class="table overflow-y-scroll">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>user</th>
+                                <th>status</th>
+                                <th>option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($users as $user) : ?>
+                                <tr>
+                                    <td><?= $user['user_id'] ?></td>
+                                    <td><?= $user['username'] ?></td>
+                                    <td><?php if ($user['isAktif'] == "1") {
+                                            echo "aktif";
+                                        } elseif ($user['isAktif'] == "0") {
+                                            echo "nonaktif";
+                                        }
+                                        ?></td>
+                                        <td>
+                                            
+                                            <a class="btn btn-danger" href="../proses/nonaktif.php?id=<?= $user['user_id'] ?>" role="button">nonaktif</a>
+                                            
+                                            <a class="btn btn-primary" href="../proses/aktif.php?id=<?= $user['user_id'] ?>" role="button">aktif</a>
+                                            
+                                            
+                                        </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
 

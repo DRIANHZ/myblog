@@ -13,8 +13,9 @@ $cari_user_id = mysqli_query($koneksi, "SELECT * FROM `users` WHERE `password` =
 $tampil_name = mysqli_fetch_assoc($cari_user_id);
 
 if (isset($_POST['post'])) {
-    $uniqueString = uniqid();
-    $post_id = crc32($uniqueString);
+    // $uniqueString = uniqid();
+    $post_id = rand(0,1000) * rand(0,1000);
+
     $created_at = date("Y-m-d", time());
 
     $title = $_POST["title"];
@@ -24,7 +25,7 @@ if (isset($_POST['post'])) {
     $user_id = $tampil_name["user_id"];
 
     posting_content("INSERT INTO `posts` (`post_id`, `title`, `content`, `user_id`, `category_id`, `image_url`, `created_at`, `update_at`) VALUES ('$post_id', '$title', '$content', '$user_id', '$category_id', '$image_url', '$created_at', '$created_at');");
-    header("location:menu.php");
+    // header("location:menu.php");
 }
 ?>
 <!DOCTYPE html>
@@ -80,4 +81,5 @@ if (isset($_POST['post'])) {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
+
 </html>
