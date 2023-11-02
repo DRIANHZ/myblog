@@ -8,7 +8,7 @@ echo $_SESSION['username'];
 
 $query = mysqli_query($koneksi, "SELECT * FROM `categories`");
 
-$_SESSION["password"];
+echo $_SESSION["password"];
 $cari_user_id = mysqli_query($koneksi, "SELECT * FROM `users` WHERE `password` = '$_SESSION[password]'");
 $tampil_name = mysqli_fetch_assoc($cari_user_id);
 
@@ -40,7 +40,10 @@ if (isset($_POST['post'])) {
 
 <body>
     <div class="container mt-4">
-        <form action="" method="post">
+    
+        <form action="../proses/uplodpost.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="username" value="<?= $_SESSION['username'] ?>">
+            <input type="hidden" name="password" value="<?= $_SESSION['password'] ?>">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">

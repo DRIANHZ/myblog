@@ -50,7 +50,7 @@ $posts = ambil_semua_data_post("SELECT * FROM `posts` WHERE `user_id` = '$tampil
                 <div class="list-group">
                     <?php foreach ($posts as $post) : ?>
                         
-                        <img src="../image/download (1).jfif" class="img-thumbnail" alt="...">
+                        <img src="../img/<?= $post['image_url'] ?>" class="img-thumbnail" alt="...">
                         
                         <a href="other_post.php?post_id=<?= $post['post_id'] ?>" class="list-group-item list-group-item-action">
                             <div class="d-flex w-100 justify-content-between">

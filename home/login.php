@@ -26,7 +26,6 @@ require "../function/fungsi.php";
         
         .blue{
             opacity: 0.5;
-            background-color: blue;
             width: 100%;
             height: 100%;
         }

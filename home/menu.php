@@ -91,7 +91,7 @@ $datas = ambil_semua_data_post("SELECT * FROM `posts`");
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 d-flex">
         <?php foreach($datas as $data): ?>
         <div class="card" style="width: 18rem;">
-            <img src="../image/download (2).jfif" class="card-img-top" alt="...">
+            <img src="../img/<?= $data['image_url'] ?>" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><?= $data['title'] ?></h5>
                 <p class="card-text"><?= $data['content'] ?></p>
