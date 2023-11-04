@@ -12,7 +12,7 @@ if (!$_SESSION) {
 
 
 
-$datas = ambil_semua_data_post("SELECT * FROM `posts` JOIN `categories`  ON posts.category_id = categories.category_id");
+$datas = ambil_semua_data_post("SELECT * FROM `posts`  JOIN `categories` ON posts.category_id = categories.category_id JOIN `users` ON posts.user_id = users.user_id");
 
 ?>
 <!doctype html>
@@ -56,7 +56,7 @@ $datas = ambil_semua_data_post("SELECT * FROM `posts` JOIN `categories`  ON post
             <div class="card" style="width: 18rem;">
                 <img src="../img/<?= $data['image_url'] ?>" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $data['title'] ?></h5>
+                    <h5 class="card-title"><?= $data['title'] ?>(<?= $data['username'] ?>)</h5>
                     <p class="card-text"><?= $data['content'] ?></p>
                     <p class="card-text">|<?= $data['name'] ?>|</p>
                     <a href="other_post.php?post_id=<?= $data['post_id'] ?>&user_id=<?= $data['user_id'] ?>"" class=" btn btn-primary">Go somewhere</a>

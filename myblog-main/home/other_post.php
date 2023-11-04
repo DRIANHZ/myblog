@@ -10,7 +10,7 @@ $posts = ambil_semua_data_post("SELECT * FROM `posts` WHERE `post_id` = '$post_i
 
 $post_id = $_GET['post_id'];
 
-$comments = ambil_semua_data_post("SELECT * FROM `comments` WHERE `post_id` = '$post_id'");
+$comments = ambil_semua_data_post("SELECT * FROM `comments`  JOIN `users` ON comments.user_id = users.user_id WHERE `post_id` = '$post_id'");
 
 session_start();
 $passUser =  $_SESSION["password"];
@@ -66,7 +66,7 @@ $user_id = $userFinder['user_id'];
                                 <div class="d-flex align-items-center">
                                     <img src="../image/profile.png" class="rounded-circle me-2" width="40" height="40">
                                     <div>
-                                        <h5><?= $post['user_id'] ?></h5>
+                                        <h5><?= $post['username'] ?></h5>
                                         <small><?= $post['created_at'] ?></small>
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@ $user_id = $userFinder['user_id'];
 
     <?php endforeach; ?>
     </div>
-    <a class="btn btn-primary" href="./menu.php" role="button">back</a>
+
 </body>
 
 </html>
